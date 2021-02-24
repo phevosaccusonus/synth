@@ -15,12 +15,12 @@
 class SynthEngine : public juce::SynthesiserSound
 {
 public:
-    bool appliesToNote(int midiNoteNumber)
+    bool appliesToNote(int midiNoteNumber) override
     {
         return true;
     }
 
-    bool appliesToChannel(int midiNoteNumber)
+    bool appliesToChannel(int midiNoteNumber) override
     {
         return true;
     }
