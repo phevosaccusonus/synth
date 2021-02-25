@@ -13,6 +13,8 @@
 #include "SynthVoice.h"
 
 
+#include "SynthVoice.h"
+
 
 bool SynthVoice::canPlaySound(juce::SynthesiserSound* sound)
 {
@@ -55,13 +57,10 @@ void SynthVoice::prepareToPlay(double sampleRate, int samplesPerBlock, int outpu
     gain.setGainLinear(0.01f);
 
     isPrepared = true;
-
 }
 
-
-void SynthVoice::renderNextBlock(juce::AudioBuffer<float>& outputBuffer, int startSample, int numSamples)
+void SynthVoice::renderNextBlock(juce::AudioBuffer< float >& outputBuffer, int startSample, int numSamples)
 {
-
     jassert(isPrepared);
 
     juce::dsp::AudioBlock<float> audioBlock{ outputBuffer };

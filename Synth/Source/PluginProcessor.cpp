@@ -22,12 +22,14 @@ SynthAudioProcessor::SynthAudioProcessor()
                        )
 #endif
 {
+
+    synthObject.addSound(new SynthEngine());
+    synthObject.addVoice(new SynthVoice());
 }
 
 SynthAudioProcessor::~SynthAudioProcessor()
 {
-    synthObject.addSound(new SynthEngine());
-    synthObject.addVoice(new SynthVoice());
+
 }
 
 //==============================================================================

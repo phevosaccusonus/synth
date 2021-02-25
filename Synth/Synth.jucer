@@ -12,9 +12,8 @@
       <FILE id="tsAmRs" name="PluginEditor.cpp" compile="1" resource="0"
             file="Source/PluginEditor.cpp"/>
       <FILE id="YsdCqk" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
-      <FILE id="yfstct" name="SynthEngine.cpp" compile="1" resource="0" file="Source/SynthEngine.cpp"/>
-      <FILE id="dIDXHP" name="SynthEngine.h" compile="0" resource="0" file="Source/SynthEngine.h"/>
       <FILE id="SKl9hd" name="SynthVoice.cpp" compile="1" resource="0" file="Source/SynthVoice.cpp"/>
+      <FILE id="yN4EmK" name="SynthSound.h" compile="0" resource="0" file="Source/SynthSound.h"/>
       <FILE id="HYQPDv" name="SynthVoice.h" compile="0" resource="0" file="Source/SynthVoice.h"/>
     </GROUP>
   </MAINGROUP>
