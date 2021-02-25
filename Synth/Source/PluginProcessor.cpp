@@ -149,16 +149,17 @@ void SynthAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::
     for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
         buffer.clear (i, 0, buffer.getNumSamples());
 
-    for (int i = 0; i < synthObject.getNumVoices(); ++i);
+    for (int i = 0; i < synthObject.getNumVoices(); ++i)
     {
-        //if (auto voice = dynamic_cast<juce::SynthesiserVoice*>(synthObject.getVoice(i)))
-        //{
-        //    //Osc controlls
-        //    //adsr
-        //    //lfo
-        //}
+        if (auto voice = dynamic_cast<juce::SynthesiserVoice*>(synthObject.getVoice(i)))
+        {
+            // Osc controls
+            // ADSR
+            // LFO
+        }
     }
-    
+
+
     synthObject.renderNextBlock(buffer, midiMessages, 0, buffer.getNumSamples());
 }
 
