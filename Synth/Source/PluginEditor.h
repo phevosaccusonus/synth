@@ -37,6 +37,11 @@ private:
     juce::Slider releaseSlider;
     juce::ComboBox oscSelector;
 
+    std::vector<std::unique_ptr<juce::Label>> macroLabel;
+    std::unique_ptr<juce::Label> headerLabel;
+
+    std::vector<juce::String> adsrNames{ "Attack", "Decay", "Sustain", "Release" };
+
     using SliderAttachment = juce::AudioProcessorValueTreeState::SliderAttachment;
 
     std::unique_ptr<SliderAttachment> attackAttachment;
