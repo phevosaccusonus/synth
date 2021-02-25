@@ -29,6 +29,8 @@ private:
     // access the processor object that created it.
     SynthAudioProcessor& audioProcessor;
 
+    void setSliderParams(juce::Slider& slider);
+
     juce::Slider attackSlider;
     juce::Slider decaySlider;
     juce::Slider sustainSlider;

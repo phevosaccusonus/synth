@@ -151,11 +151,14 @@ void SynthAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::
 
     for (int i = 0; i < synthObject.getNumVoices(); ++i)
     {
-        if (auto voice = dynamic_cast<juce::SynthesiserVoice*>(synthObject.getVoice(i)))
+        if (auto voice = dynamic_cast<SynthVoice*>(synthObject.getVoice(i)))
         {
-            // Osc controls
-            // ADSR
-            // LFO
+            auto& attack = *apvts.getRawParameterValue("ATTACK");
+            auto& decay = *apvts.getRawParameterValue("DECAY");
+            auto& sustain = *apvts.getRawParameterValue("SUSTAIN");
+            auto& release = *apvts.getRawParameterValue("RELEASE");
+
+            voice->updateADSR(attack.load(), decay.load(), sustain.load(), release.load());
         }
     }
 

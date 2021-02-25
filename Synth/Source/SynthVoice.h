@@ -31,6 +31,8 @@ public:
 
     void renderNextBlock(juce::AudioBuffer< float >& outputBuffer, int startSample, int numSamples) override;
 
+    void updateADSR(const float attack, const float decay, const float sustain, const float release);
+
 private:
     juce::ADSR adsr;
     juce::ADSR::Parameters adsrParams;
