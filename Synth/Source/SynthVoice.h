@@ -14,11 +14,6 @@
 #include "SynthSound.h"
 
 
-#pragma once
-
-#include <JuceHeader.h>
-#include "SynthSound.h"
-
 class SynthVoice : public juce::SynthesiserVoice
 {
 public:
@@ -43,8 +38,4 @@ private:
     juce::dsp::Oscillator<float> osc{ [](float x) { return std::sin(x); } };
     juce::dsp::Gain<float> gain;
     bool isPrepared{ false };
-
-    // return std::sin (x); //Sine Wave
-    // return x / MathConstants<float>::pi; // Saw Wave
-    // return x < 0.0f ? -1.0f : 1.0f;  // Square Wave
 };

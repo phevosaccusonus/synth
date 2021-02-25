@@ -9,12 +9,7 @@
 */
 
 #include <JuceHeader.h>
-
 #include "SynthVoice.h"
-
-
-#include "SynthVoice.h"
-
 
 bool SynthVoice::canPlaySound(juce::SynthesiserSound* sound)
 {
@@ -47,8 +42,11 @@ void SynthVoice::prepareToPlay(double sampleRate, int samplesPerBlock, int outpu
     adsr.setSampleRate(sampleRate);
 
     juce::dsp::ProcessSpec spec;
+
     spec.maximumBlockSize = samplesPerBlock;
+
     spec.sampleRate = sampleRate;
+
     spec.numChannels = outputChannels;
 
     osc.prepare(spec);
@@ -64,7 +62,9 @@ void SynthVoice::renderNextBlock(juce::AudioBuffer< float >& outputBuffer, int s
     jassert(isPrepared);
 
     juce::dsp::AudioBlock<float> audioBlock{ outputBuffer };
+
     osc.process(juce::dsp::ProcessContextReplacing<float>(audioBlock));
+
     gain.process(juce::dsp::ProcessContextReplacing<float>(audioBlock));
 
     adsr.applyEnvelopeToBuffer(outputBuffer, startSample, numSamples);
